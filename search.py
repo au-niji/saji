@@ -4,11 +4,13 @@ from selenium import webdriver
 import chromedriver_binary
 import time
 
+from write_csv import WriteCSV
+
 CSV_FILE = "./url.csv"
 
 class Selenium():
     def __init__(self):
-        pass
+        self.weite_instance = WriteCSV()
     
     def remove_linefeed(self, list_obj):
         replace_list = []
@@ -36,6 +38,7 @@ class Selenium():
             print("Open: " + URL[url_line])
             driver.get(URL[url_line])
             html = self.fetch_html(driver)
+            self.weite_instance.write_csv(html)
             time.sleep(5)
 
         html = self.fetch_html(driver)

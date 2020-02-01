@@ -135,3 +135,6 @@ dmypy.json
 
 # url.csv
 /url.csv
+
+# page_info.csv
+/csv/page_info.csv

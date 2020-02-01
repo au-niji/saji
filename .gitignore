@@ -134,4 +134,4 @@ dmypy.json
 .DS_Store
 
 # url.csv
-.url.csv
+/url.csv

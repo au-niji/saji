@@ -14,12 +14,14 @@ class Selenium():
 
         driver = webdriver.Chrome(options=options)
 
-        driver.get("https://www.google.com/")
+        driver.get(URL)
         time.sleep(5)
-
-        print(driver.page_source)
+        html = self.fetch_html(driver)
         driver.quit()
         return driver
+
+    def fetch_html(self, driver):
+        return driver.page_source
 
 
 

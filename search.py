@@ -4,27 +4,44 @@ from selenium import webdriver
 import chromedriver_binary
 import time
 
+CSV_FILE = "./url.csv"
+
 class Selenium():
     def __init__(self):
         pass
     
-    def start_up(self):
+    def remove_linefeed(self, list_obj):
+        replace_list = []
+        for line in list_obj:
+            replace_list.append(line.replace('\n',''))
+        return replace_list
+
+    def fetch_html(self, driver):
+        return driver.page_source
+
+    def get_url(self):
+        with open(CSV_FILE, mode='r', encoding='utf-8') as url_file:
+            target_url = list(url_file)
+        target_url = self.remove_linefeed(target_url)
+        return target_url
+
+    def main(self):
         options = Options()
         options.add_argument('--headless')
 
         driver = webdriver.Chrome(options=options)
 
-        driver.get(URL)
-        time.sleep(5)
+        URL = self.get_url()
+        for url_line in range(len(URL)):
+            print("Open: " + URL[url_line])
+            driver.get(URL[url_line])
+            html = self.fetch_html(driver)
+            time.sleep(5)
+
         html = self.fetch_html(driver)
         driver.quit()
         return driver
 
-    def fetch_html(self, driver):
-        return driver.page_source
-
-
-
 if __name__ == "__main__":
     instance = Selenium()
-    instance.start_up()
+    instance.main()

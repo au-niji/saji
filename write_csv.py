@@ -7,11 +7,11 @@ class WriteCSV():
 
     def write_csv(self, info):
         try:
-            with open(WRITE_CSV_PATH, mode='x', encoding='utf-8') as csv_file:
+            with open(WRITE_CSV_PATH, mode='x') as csv_file:
                 writer = csv.writer(csv_file)
                 writer.writerow([info])
         except FileExistsError:
-            with open(WRITE_CSV_PATH, mode='a', encoding='utf-8') as csv_file:
+            with open(WRITE_CSV_PATH, mode='a') as csv_file:
                 writer = csv.writer(csv_file)
                 writer.writerow([info])
 

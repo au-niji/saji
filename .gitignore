@@ -133,8 +133,8 @@ dmypy.json
 
 .DS_Store
 
-# url.csv
+# 下記は HTML を取得する URL を記述するための file
 /url.csv
 
-# page_info.csv
+# 下記は取得した HTML を書き込むための CSV ファイル
 /csv/page_info.csv

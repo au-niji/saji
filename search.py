@@ -19,13 +19,13 @@ class Selenium():
             self.linefeed_option = False
     
     def remove_linefeed(self, obj):
-        if type(obj) == list:
-            replace_list = []
-            for line in obj:
-                replace_list.append(line.replace('\n',''))
-            return replace_list
-        replace_obj = obj.replace('\n','')
-        return replace_obj
+        if type(obj) != list:
+            replace_obj = obj.replace('\n','')
+            return replace_obj
+        replace_list = []
+        for line in obj:
+            replace_list.append(line.replace('\n',''))
+        return replace_list
 
     def fetch_html(self, driver):
         return driver.page_source

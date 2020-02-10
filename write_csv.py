@@ -1,5 +1,5 @@
 import csv
-WRITE_CSV_PATH = "./csv/page_info.csv"
+WRITE_CSV_PATH = './csv/page_info.csv'
 
 class WriteCSV():
     def __init__(self):
@@ -18,6 +18,6 @@ class WriteCSV():
         return 0
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     instance = WriteCSV()
-    instance.write_csv("hogehoge")
+    instance.write_csv('hogehoge')

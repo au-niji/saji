@@ -8,12 +8,12 @@ import time
 
 from write_csv import WriteCSV
 
-CSV_FILE = "./url.csv"
+CSV_FILE = './url.csv'
 
 class Selenium():
     def __init__(self, args):
         self.weite_instance = WriteCSV()
-        if "-i" in args or "--ignore-space-at-eol" in args:
+        if '-i' in args or '--ignore-space-at-eol' in args:
             self.linefeed_option = True
         else:
             self.linefeed_option = False
@@ -44,7 +44,7 @@ class Selenium():
 
         URL = self.get_url()
         for url_line in range(len(URL)):
-            print("Open: " + URL[url_line])
+            print('Open: ' + URL[url_line])
             driver.get(URL[url_line])
             html = self.fetch_html(driver)
             if self.linefeed_option == True:
@@ -56,7 +56,7 @@ class Selenium():
         driver.quit()
         return driver
         
-if __name__ == "__main__":
+if __name__ == '__main__':
     usage = 'Usage: python {} FILE [--ignore-space-at-eol] [--help]\n'.format(__file__)
     option = 'Optional arguments: \n\
     -h, --help                   show this help message and exit\n\

@@ -1,15 +1,17 @@
 # saji
 ## 概要
 このアプリは、テキストに記述された複数のURLからHTMLを取得し、CSV形式で保存することができます。
-`$ git clone https://github.com/au-niji/saji`して、SeleniumとPython、Headless Chrome環境を整えることで利用することができ、CUI環境だけでHTMLをCSV形式で保存することができます。
+`$ git clone https://github.com/au-niji/saji`して、SeleniumとPython、Headless Chrome環境を整えることで利用することができ、CUI環境だけで実行することができます。
 
 ## 準備
 - Selenium
 - Chrome Canary
 - Chrome driver
 
-`$ pip install selenium`
-`$ pip install chromedriver-binary`
+```
+$ pip install selenium
+$ pip install chromedriver-binary
+```
 
 ## 使い方
 ### URLを記述するurl.csvを作る
